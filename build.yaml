@@ -1,8 +1,17 @@
 include:
+  - board:  xiao_ble//zmk
+    shield: totem_dongle
+
   - board: xiao_ble//zmk
     shield: totem_left
+    # Add these cmake-args to the peripherals you wish to use with the dongle
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
   - board: xiao_ble//zmk
     shield: totem_right
+    # Add these cmake-args to the peripherals you wish to use with the dongle
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
   - board: xiao_ble//zmk
     shield: settings_reset
 # there is no settingsreset (needed) for the XIAO
